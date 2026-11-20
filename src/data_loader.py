@@ -2,7 +2,7 @@ import requests
 from pathlib import Path
 from collections import Counter
 from tqdm import tqdm
-from config import DATA_DIR, SPEAKERS, DIGITS, REPS, BASE_URL, N_PER_DIGIT
+from .config import DATA_DIR, SPEAKERS, DIGITS, REPS, BASE_URL, N_PER_DIGIT
 
 
 def download_fsdd(n_per_digit=N_PER_DIGIT, speakers=None):

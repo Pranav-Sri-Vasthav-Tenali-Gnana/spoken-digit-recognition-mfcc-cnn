@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 from sklearn.metrics import accuracy_score
-from features import extract_mfcc_features, extract_melspec_normalised
-from config import SPEAKERS, output_path
+from ..features import extract_mfcc_features, extract_melspec_normalised
+from ..config import SPEAKERS, output_path
 
 
 def evaluate_per_speaker(dataset, svm_pipeline, rf_pipeline, cnn_model, mean, std):

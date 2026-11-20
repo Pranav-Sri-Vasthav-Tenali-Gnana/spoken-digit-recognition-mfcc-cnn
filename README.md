@@ -18,20 +18,25 @@ Beyond accuracy, the models are also tested for **robustness to noise** (additiv
 
 ```
 spoken-digit-recognition-mfcc-cnn/
-├── main.py             # End-to-end pipeline entry point
-├── config.py           # Constants, hyperparameters and output folder
-├── data_loader.py      # FSDD download and dataset loading
-├── features.py         # Silence trimming, pre-emphasis, MFCC and Mel-spectrogram extraction
-├── train_classical.py  # SVM and Random Forest training
-├── train_cnn.py        # CNN architecture, augmentation and training
-├── evaluate.py         # Metrics, confusion matrices, comparison plots
-├── robustness.py       # Noise robustness evaluation (AWGN at varying SNR)
-├── fairness.py         # Per-speaker accuracy (fairness) evaluation
-├── visualize.py        # EDA, waveform, feature and CNN activation plots
-├── outputs/            # Figures produced by a full run
+├── main.py                    # End-to-end pipeline entry point
+├── src/
+│   ├── config.py              # Constants, hyperparameters, data and output paths
+│   ├── data_loader.py         # FSDD download and dataset loading
+│   ├── features.py            # Silence trimming, pre-emphasis, MFCC and Mel-spectrogram extraction
+│   ├── visualization.py       # EDA, waveform, feature, training-curve and CNN activation plots
+│   ├── models/
+│   │   ├── classical.py       # SVM (RBF) and Random Forest pipelines
+│   │   └── cnn.py             # CNN architecture, SpecAugment-style masking and training
+│   └── evaluation/
+│       ├── metrics.py         # Accuracy / precision / recall / F1, confusion matrices, comparison plots
+│       ├── robustness.py      # Noise robustness (AWGN at varying SNR)
+│       └── fairness.py        # Per-speaker accuracy
+├── outputs/                   # Figures produced by a full run (fig1 … fig10)
 ├── requirements.txt
 └── README.md
 ```
+
+The dataset is downloaded to `fsdd_recordings/` (git-ignored) and all figures are written to `outputs/`, both relative to the project root, so `main.py` can be run from any directory.
 
 ---
 

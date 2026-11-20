@@ -9,23 +9,23 @@ tf.get_logger().setLevel('ERROR')
 np.random.seed(42)
 tf.random.set_seed(42)
 
-from config import NUM_CLASSES
-from data_loader import download_fsdd, get_label_counts
-from features import build_feature_matrices
-from visualize import (
+from src.config import NUM_CLASSES
+from src.data_loader import download_fsdd, get_label_counts
+from src.features import build_feature_matrices
+from src.visualization import (
     plot_class_distribution, plot_waveforms,
     plot_feature_representations, plot_training_curves,
     plot_cnn_activation_maps
 )
-from train_classical import train_svm, train_random_forest
-from train_cnn import train_cnn
-from evaluate import (
+from src.models.classical import train_svm, train_random_forest
+from src.models.cnn import train_cnn
+from src.evaluation.metrics import (
     compute_metrics, plot_confusion_matrices,
     print_classification_reports, plot_model_comparison,
     plot_accuracy_vs_time
 )
-from robustness import evaluate_robustness
-from fairness import evaluate_per_speaker
+from src.evaluation.robustness import evaluate_robustness
+from src.evaluation.fairness import evaluate_per_speaker
 
 
 def main():

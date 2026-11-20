@@ -1,6 +1,6 @@
 import numpy as np
 import librosa
-from config import SR, N_MFCC, N_MELS, MAX_FRAMES
+from .config import SR, N_MFCC, N_MELS, MAX_FRAMES
 
 
 def load_and_preprocess(path, sr=SR):

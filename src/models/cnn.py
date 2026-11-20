@@ -4,7 +4,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
-from config import NUM_CLASSES
+from ..config import NUM_CLASSES
 
 
 def augment_batch(X):

@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import librosa
 from sklearn.metrics import accuracy_score
-from features import load_and_preprocess
-from config import SR, N_MFCC, N_MELS, MAX_FRAMES, output_path
+from ..features import load_and_preprocess
+from ..config import SR, N_MFCC, N_MELS, MAX_FRAMES, output_path
 
 
 def add_awgn_noise(signal, snr_db):

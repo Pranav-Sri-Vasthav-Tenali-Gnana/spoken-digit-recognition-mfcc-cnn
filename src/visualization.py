@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import librosa
 import librosa.display
 from tensorflow import keras
-from config import SR, output_path
+from .config import SR, output_path
 
 
 def plot_class_distribution(label_counts):
