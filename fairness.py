@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 from sklearn.metrics import accuracy_score
 from features import extract_mfcc_features, extract_melspec_normalised
-from config import SPEAKERS
+from config import SPEAKERS, output_path
 
 
 def evaluate_per_speaker(dataset, svm_pipeline, rf_pipeline, cnn_model, mean, std):
@@ -57,7 +57,7 @@ def evaluate_per_speaker(dataset, svm_pipeline, rf_pipeline, cnn_model, mean, st
     ax.legend(fontsize=10)
     ax.grid(axis='y', linestyle='--', alpha=0.5)
     plt.tight_layout()
-    plt.savefig("per_speaker_accuracy.png", dpi=150)
+    plt.savefig(output_path("fig9_per_speaker_fairness.png"), dpi=150)
     plt.show()
 
     print("\nPer-speaker accuracy summary:")

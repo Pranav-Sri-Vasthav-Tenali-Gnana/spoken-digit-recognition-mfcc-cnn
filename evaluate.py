@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from config import output_path
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score,
     confusion_matrix, classification_report
@@ -40,7 +41,7 @@ def plot_confusion_matrices(y_test, y_pred_svm, y_pred_rf, y_pred_cnn):
         ax.set_xlabel("Predicted")
         ax.set_ylabel("True")
     plt.tight_layout()
-    plt.savefig("confusion_matrices.png", dpi=150)
+    plt.savefig(output_path("fig7_confusion_matrices.png"), dpi=150)
     plt.show()
 
 
@@ -75,7 +76,7 @@ def plot_model_comparison(svm_metrics, rf_metrics, cnn_metrics):
     ax.legend(fontsize=10)
     ax.grid(axis='y', linestyle='--', alpha=0.5)
     plt.tight_layout()
-    plt.savefig("model_comparison.png", dpi=150)
+    plt.savefig(output_path("fig5_model_comparison_bar.png"), dpi=150)
     plt.show()
 
 
@@ -94,5 +95,5 @@ def plot_accuracy_vs_time(svm_accuracy, svm_time, rf_accuracy, rf_time, cnn_accu
     ax.set_title("Accuracy vs Computational Cost", fontsize=13, fontweight='bold')
     ax.grid(linestyle='--', alpha=0.5)
     plt.tight_layout()
-    plt.savefig("accuracy_vs_time.png", dpi=150)
+    plt.savefig(output_path("fig6_accuracy_vs_cost.png"), dpi=150)
     plt.show()

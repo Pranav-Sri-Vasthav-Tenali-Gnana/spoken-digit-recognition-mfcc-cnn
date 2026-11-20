@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import librosa
 import librosa.display
 from tensorflow import keras
-from config import SR
+from config import SR, output_path
 
 
 def plot_class_distribution(label_counts):
@@ -19,7 +19,7 @@ def plot_class_distribution(label_counts):
         ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 1,
                 str(cnt), ha='center', fontsize=10)
     plt.tight_layout()
-    plt.savefig("class_distribution.png", dpi=150)
+    plt.savefig(output_path("fig1_class_distribution.png"), dpi=150)
     plt.show()
 
 
@@ -43,7 +43,7 @@ def plot_waveforms(dataset, sr=SR):
         ax.set_ylabel("Amplitude", fontsize=8)
         ax.tick_params(labelsize=7)
     plt.tight_layout()
-    plt.savefig("waveforms.png", dpi=150)
+    plt.savefig(output_path("fig2_waveforms.png"), dpi=150)
     plt.show()
     return sample_files
 
@@ -71,7 +71,7 @@ def plot_feature_representations(sample_path, sr=SR):
     axes[2].set_title("Mel-Spectrogram (64 mels)")
 
     plt.tight_layout()
-    plt.savefig("features_viz.png", dpi=150)
+    plt.savefig(output_path("fig3_feature_representations.png"), dpi=150)
     plt.show()
 
 
@@ -94,7 +94,7 @@ def plot_training_curves(history):
     axes[1].legend()
 
     plt.tight_layout()
-    plt.savefig("cnn_training_curves.png", dpi=150)
+    plt.savefig(output_path("fig4_cnn_training_history.png"), dpi=150)
     plt.show()
 
 
@@ -122,5 +122,5 @@ def plot_cnn_activation_maps(cnn_model, X_mel_test_cnn, y_test):
         ax.axis('off')
 
     plt.tight_layout()
-    plt.savefig("cnn_activation_maps.png", dpi=150)
+    plt.savefig(output_path("fig10_cnn_activation_maps.png"), dpi=150)
     plt.show()

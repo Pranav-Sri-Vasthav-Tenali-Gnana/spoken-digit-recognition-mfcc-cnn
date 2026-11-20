@@ -117,7 +117,7 @@ def main():
     ])
     summary_df.set_index('Model', inplace=True)
     print(summary_df.to_string())
-    print("\nAll outputs saved as PNG files in the current directory.")
+    print("\nAll figures saved to the outputs/ folder.")
 
 
 if __name__ == "__main__":

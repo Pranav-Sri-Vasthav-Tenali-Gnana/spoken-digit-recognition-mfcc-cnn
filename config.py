@@ -1,3 +1,4 @@
+from pathlib import Path
 import numpy as np
 import tensorflow as tf
 
@@ -19,3 +20,11 @@ N_MELS = 64
 MAX_FRAMES = 64
 NUM_CLASSES = 10
 N_PER_DIGIT = 15
+
+# All figures are written here (created on first use)
+OUTPUT_DIR = Path(__file__).resolve().parent / "outputs"
+
+
+def output_path(filename):
+    OUTPUT_DIR.mkdir(exist_ok=True)
+    return OUTPUT_DIR / filename

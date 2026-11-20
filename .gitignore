@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Downloaded dataset (fetched by data_loader.py)
+fsdd_recordings/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
