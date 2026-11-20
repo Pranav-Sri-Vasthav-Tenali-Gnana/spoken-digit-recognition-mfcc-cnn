@@ -1,10 +1,7 @@
 # Automatic Spoken Digit Recognition (ASDR)
 
-**Course:** Speech Understanding  
-**Team Members:**
-- Abhinav Tote (M25DE1041)
-- Aakanksha Nalamati (M25DE1068)
-- Pranav Sri Vasthav Tenali Gnana (M25DE1069)
+**Author:** Pranav Sri Vasthav Tenali Gnana  
+**Course:** Speech Understanding, M.Tech Data Engineering, IIT Jodhpur
 
 ---
 
@@ -21,7 +18,8 @@ Dataset: [Free Spoken Digit Dataset (FSDD)](https://github.com/Jakobovski/free-s
 ## Project Structure
 
 ```
-spoken_digit_recognition/
+spoken-digit-recognition-mfcc-cnn/
+├── OUTPUT/             # Saved result figures from a full run
 ├── config.py           # Constants and hyperparameters
 ├── data_loader.py      # FSDD download and dataset loading
 ├── features.py         # MFCC and Mel-Spectrogram extraction
@@ -42,8 +40,8 @@ spoken_digit_recognition/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/Pranav-Sri-Vasthav-Tenali-Gnana/M25DE1041_M25DE1068_M25DE1069
-cd M25DE1041_M25DE1068_M25DE1069
+git clone https://github.com/Pranav-Sri-Vasthav-Tenali-Gnana/spoken-digit-recognition-mfcc-cnn
+cd spoken-digit-recognition-mfcc-cnn
 ```
 
 ### 2. Create a virtual environment (recommended)
@@ -93,6 +91,12 @@ This will:
 | `robustness_noise.png` | Accuracy under varying SNR |
 | `per_speaker_accuracy.png` | Per-speaker fairness analysis |
 | `cnn_activation_maps.png` | CNN conv layer activation maps |
+
+Figures from a completed run are kept in [`OUTPUT/`](OUTPUT) (`fig1_…` to `fig10_…`), for example:
+
+| Model comparison | Noise robustness |
+|---|---|
+| ![Model comparison](OUTPUT/fig5_model_comparison_bar.png) | ![Noise robustness](OUTPUT/fig8_noise_robustness.png) |
 
 ---
 
